@@ -11,15 +11,15 @@ Progressive Web Apps have to be fast, and installable, which means that they wor
 The application shell is stored in the cache. When you first load, you load the shell, then the service worker retrieves the latest data from the site.
 Core Objectives:
 Phase I
-1. Search and select routes in 3 or less steps
-2. Keep a tab on your most commonly used routes (myroutes) > tells you the latest ETA
-3. ETA of buses presented in a way that is easy to understand and see (for all ages and levels of education)
+  1. Search and select routes in 3 or less steps
+  2. Keep a tab on your most commonly used routes (myroutes) > tells you the latest ETA
+  3. ETA of buses presented in a way that is easy to understand and see (for all ages and levels of education)
 
 Phase II
-4. Payment integration (beta)
-https://developers.google.com/web/fundamentals/getting-started/primers/payment-request/
-5. Rider check-in
-6. Feedback for RIPTA: New Route Suggestion due to user start/end points (submitted through app). Users vote on new routes and put in amount of $ they would be willing to pay for it.
+  4. Payment integration (beta)
+  https://developers.google.com/web/fundamentals/getting-started/primers/payment-request/
+  5. Rider check-in
+  6. Feedback for RIPTA: New Route Suggestion due to user start/end points (submitted through app). Users vote on new routes and put in amount of $ they would be willing to pay for it.
 
 ## Code Example
 
