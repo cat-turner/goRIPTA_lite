@@ -20,7 +20,7 @@ Phase II
   4. Payment integration (beta)
   https://developers.google.com/web/fundamentals/getting-started/primers/payment-request/
   5. Rider check-in
-  6. Feedback for RIPTA: New Route Suggestion due to user start/end points (submitted through app). Users vote on new routes and put in amount of $ they would be willing to pay for it.
+  6. Feedback for RIPTA: New route suggestion from user start/end points (submitted through app). Users vote on new routes and put in amount of $ they would be willing to pay for it.
 
 ## Code Example
 
