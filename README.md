@@ -9,6 +9,7 @@ https://developers.google.com/web/progressive-web-apps/
 Progressive Web Apps have to be fast, and installable, which means that they work online, offline, and on intermittent, slow connections. To achieve this, we need to cache our app shell using service worker, so that it's always available quickly and reliably.
 
 The application shell is stored in the cache. When you first load, you load the shell, then the service worker retrieves the latest data from the site.
+
 Core Objectives:
 Phase I
   1. Search and select routes in 3 or less steps
