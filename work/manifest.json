@@ -1,0 +1,7 @@
+{
+  "name": "goRIPTA_lite",
+  "short_name": "goRIPTA_lite",
+  "description": "user interface to see bus rides",
+  "start_url": "/",
+  "display": "standalone"
+}

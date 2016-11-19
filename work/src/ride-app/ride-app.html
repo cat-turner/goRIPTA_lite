@@ -1,0 +1,114 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+
+<link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+<link rel="import" href="bower_components/app-layout/demo/sample-content.html">
+
+<link rel="import" href="/bower_components/app-layout/app-layout.html">
+
+<dom-module id="ride-app">
+    <template>
+
+    <style>
+      app-header {
+        background-color: #1B5E20;
+        color: #fff;
+      }
+      app-header paper-icon-button {
+        --paper-icon-button-ink-color: white;
+      }
+      
+    </style>
+
+    <app-drawer-layout>
+
+      <app-drawer>
+        <app-toolbar>My Rides</app-toolbar>
+      </app-drawer>
+
+      <app-header-layout>
+
+        <app-header reveals effects="waterfall">
+          <app-toolbar>
+            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <div main-title>goRIPTA lite</div>
+          </app-toolbar>
+        </app-header>
+
+        <sample-content size="100">
+
+          
+          
+          <div style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); padding: 16px; margin: 24px; border-radius: 5px; background-color: #fff; color: #757575;">
+            <div style="display: inline-block;font-size: 30px; text-align: center;">Hello Cat.</div>
+            <div style="font-size: 22px; margin: 16px 0; color: #212121;"> Where are we going?</div>
+            <p style="font-size: 16px;">Remaining balance: $14.00</p>
+            <p style="font-size: 14px;">Number of Rides: 7 </p>
+          </div>
+          
+          <div style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); padding: 16px; margin: 24px; border-radius: 5px; background-color: #fff; color: #757575;">
+            <div>
+            <div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #555; text-align: center;">64</div>
+            <div style="display: inline-block;font-size: 30px; text-align: center;">Kingston Rail Road > URI Kingston</div>
+            </div>
+            <div style="font-size: 22px; margin: 16px 0; color: #212121;">INBOUND</div>
+            <p style="font-size: 22px;">STATUS: <span style="color: #4CAF50">ON TIME</span></p>
+            <p style="font-size: 16px;">ETA: 5 minutes</p>
+          </div>
+          
+          <div style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); padding: 16px; margin: 24px; border-radius: 5px; background-color: #fff; color: #757575;">
+            <div>
+            <div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #555; text-align: center;">66</div>
+            <div style="display: inline-block;font-size: 30px; text-align: center;">Wakefield Mal > Kingstown & High</div>
+            </div>
+            <div style="font-size: 22px; margin: 16px 0; color: #212121;">INBOUND</div>
+            <p style="font-size: 22px;">STATUS: <span style="color: #4CAF50">ON TIME</span></p>
+            <p style="font-size: 16px;">ETA: 7 minutes</p>
+          </div>
+          
+          <div style="box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); padding: 16px; margin: 24px; border-radius: 5px; background-color: #fff; color: #757575;">
+            <div>
+            <div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: #ddd; line-height: 64px; font-size: 30px; color: #555; text-align: center;">65</div>
+            <div style="display: inline-block;font-size: 30px; text-align: center;">Wakefield Mall > Rte. 1 & 138 Park-n-Ride</div>
+            </div>
+            <div style="font-size: 22px; margin: 16px 0; color: #212121;">INBOUND</div>
+            <p style="font-size: 22px;">STATUS: <span style="color: #F44336">DELAY</span></p>
+            <p style="font-size: 16px;">ETA: 5 minutes</p>
+          </div>
+          
+          
+          
+          
+        </sample-content>
+
+      </app-header-layout>
+
+    </app-drawer-layout>
+
+  </template>
+
+  <script>
+
+  //properties: here you can store variables
+  
+    Polymer({
+
+      is: 'ride-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'ride-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
