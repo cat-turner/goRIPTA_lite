@@ -10,12 +10,21 @@ Progressive Web Apps have to be fast, and installable, which means that they wor
 
 The application shell is stored in the cache. When you first load, you load the shell, then the service worker retrieves the latest data from the site. By storing app shell data in the user's browsers there will be less load on the servers, freeing resources to process and manage bus data.
 
+Here's how I am imaging the layout of the app:
+
+-it will be a one page app. every feature will be integrated as a card
+-there will be a drop down menu to select buttons that will take you to the specific cards
+-there will be one button on the bottom right hand corner for the user to input a navigation (like google maps)
+-the application will follow the principles of material design light: https://getmdl.io/index.html
+
+That's it. for every feature there is a card. Of course that seems very structured but here's the fun part: because the cards are in a sense "pluginable" we can experiment with the features
+
 Core Objectives:
 Phase I
   1. Search and select routes in 3 or less steps
   2. Keep a tab on your most commonly used routes (myroutes) > tells you the latest ETA
   3. ETA of buses presented in a way that is easy to understand and see (for all ages and languages)
-Features:
+Features (2-3):
 TBD on Friday
 
 Phase II
