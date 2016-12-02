@@ -35,8 +35,9 @@ PWApps through chrome have built-in functionality that can used to meet project 
 1. Install the LTS version (4.x) of Node.js. The current version (6.x) should work, but is not officially supported. Versions below LTS are not supported. Skip if you have started a c9 container with nodejs.
 2. Install git
 3. Pull this repository and cd into it. You will mainly serve this file:
-
-    ``` src/ride-app/ride-app.html```
+    
+    /src/ride-app/ride-app.html
+    
     There will be many add ons to this file, including service workers and other fun goodies. 
 
 4. Install the latest version of Bower.
