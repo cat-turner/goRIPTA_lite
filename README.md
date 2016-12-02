@@ -32,30 +32,30 @@ Good design for everyone that can be used in everyday life. New technology is co
 
 PWApps through chrome have built-in functionality that can used to meet project objectives. Picking a bus route and planning your day should be a seemless process.
 
-## Installation
+## Instal
 
-Install the Polymer CLI to serve the demo locally.
 1. Install the LTS version (4.x) of Node.js. The current version (6.x) should work, but is not officially supported. Versions below LTS are not supported. Skip if you have started a c9 container with nodejs.
 2. Install git.
-3. Pull repository
+3. Pull this repository
 4. Install the latest version of Bower.
     npm install -g bower
+    
 5. Install Polymer CLI.
     npm install -g polymer-cli
 
 ## Run the demo
 
-1. Cd to /work directory
+1. Cd to /work directory of goRIPTA_lite
 2. Run polymer serve from the repo directory:
     polymer serve
 
 3. Open localhost:8080/components/icon-toggle/demo/ in your browser.
 
-Cloud 9 users:
+    Cloud 9 users:
     
     polymer serve --hostname "0.0.0.0" 
 
-4. We have to serve the page on a port. Open a new tab, then you will go to:
+    We have to serve the page on a port. Open a new tab, then you will go to:
     https://<your-c9-container-name>-<yrusername>.c9users.io:8080
 
     For example, this is my set up:
@@ -63,7 +63,7 @@ Cloud 9 users:
     Note that underscore in container names is replaced by dash
 
 (Note that the path uses icon-toggle—the component name listed in this element's bower.json file—rather than the actual directory name. If you're wondering why polymer serve does this, see HTML imports and dependency management.)
-You'll see some cards, with the first one being hello Cat.
+You'll see some cards, with the first one being hello Cat. If you don't know where to start, try changing "hello Cat" to "hello mr/ms cool". Just do it mayne.
 
 
 ## API Reference
