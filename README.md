@@ -14,7 +14,9 @@ Core Objectives:
 Phase I
   1. Search and select routes in 3 or less steps
   2. Keep a tab on your most commonly used routes (myroutes) > tells you the latest ETA
-  3. ETA of buses presented in a way that is easy to understand and see (for all ages and levels of education)
+  3. ETA of buses presented in a way that is easy to understand and see (for all ages and languages)
+Features:
+TBD on Friday
 
 Phase II
   4. Payment integration (beta)
@@ -22,21 +24,21 @@ Phase II
   5. Rider check-in
   6. Feedback for RIPTA: New route suggestion from user start/end points (submitted through app). Users vote on new routes and put in amount of $ they would be willing to pay for it.
 
-## Code Example
-
-TODO
-
 ## Motivation
 
 Good design for everyone that can be used in everyday life. New technology is cool. 
 
 PWApps through chrome have built-in functionality that can used to meet project objectives. Picking a bus route and planning your day should be a seemless process.
 
-## Instal
+## Install
 
 1. Install the LTS version (4.x) of Node.js. The current version (6.x) should work, but is not officially supported. Versions below LTS are not supported. Skip if you have started a c9 container with nodejs.
-2. Install git.
-3. Pull this repository
+2. Install git
+3. Pull this repository and cd into it. You will mainly serve this file:
+
+    ``` src/ride-app/ride-app.html```
+    There will be many add ons to this file, including service workers and other fun goodies. 
+
 4. Install the latest version of Bower.
     ```
     npm install -g bower
