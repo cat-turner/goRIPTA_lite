@@ -34,7 +34,37 @@ PWApps through chrome have built-in functionality that can used to meet project 
 
 ## Installation
 
-TODO: Provide code examples and explanations of how to get the project.
+Install the Polymer CLI to serve the demo locally.
+1. Install the LTS version (4.x) of Node.js. The current version (6.x) should work, but is not officially supported. Versions below LTS are not supported. Skip if you have started a c9 container with nodejs.
+2. Install git.
+3. Pull repository
+4. Install the latest version of Bower.
+    npm install -g bower
+5. Install Polymer CLI.
+    npm install -g polymer-cli
+
+## Run the demo
+
+1. Cd to /work directory
+2. Run polymer serve from the repo directory:
+    polymer serve
+
+3. Open localhost:8080/components/icon-toggle/demo/ in your browser.
+
+Cloud 9 users:
+    
+    polymer serve --hostname "0.0.0.0" 
+
+4. We have to serve the page on a port. Open a new tab, then you will go to:
+    https://<your-c9-container-name>-<yrusername>.c9users.io:8080
+
+    For example, this is my set up:
+    https://learn-pwas-blubytes1.c9users.io:8080/
+    Note that underscore in container names is replaced by dash
+
+(Note that the path uses icon-toggle—the component name listed in this element's bower.json file—rather than the actual directory name. If you're wondering why polymer serve does this, see HTML imports and dependency management.)
+You'll see some cards, with the first one being hello Cat.
+
 
 ## API Reference
 
