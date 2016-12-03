@@ -13,6 +13,15 @@
 
 <link rel="import" href="/bower_components/app-layout/app-layout.html">
 
+<!--<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+
+</script>-->
+
 <dom-module id="ride-app">
     <template>
 
@@ -108,7 +117,6 @@
           value: 'ride-app',
         },
       },
-
     });
   </script>
 </dom-module>

@@ -13,7 +13,12 @@
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
     <link rel="import" href="/src/ride-app/ride-app.html">
-    
+    <!--<script>
+        window.addEventListener('load', function() {
+            register('/src/ride-app/service-worker.js')
+                .then(function() { console.log('Service Worker Registered'); });
+        });
+    </script>-->
     <style>
     body {
       margin: 0;
@@ -21,7 +26,7 @@
       background-color: #f1f1f1;
     }
     </style>
-    
+
   </head>
   <body>
     <ride-app></ride-app>
