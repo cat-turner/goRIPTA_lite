@@ -66,6 +66,7 @@ self.addEventListener('activate', function(e){
     return self.clients.claim();
 });
 
+/*Fetching*/
 self.addEventListener('fetch', function(e){
     console.log('[Service Worker] Fetch', e.request.url);
     var dataUrl = 'https://riptapi.herokuapp.com/api/tripupdates/route/60';
