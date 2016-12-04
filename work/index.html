@@ -10,10 +10,13 @@
     <link rel="manifest" href="/manifest.json">
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Logo handwritten font -->
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel="import" href="/src/ride-app/ride-app.html">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
       body {
@@ -24,13 +27,14 @@
       i.left {
         margin-right: 10px!important;
       }
-      .modal {
+      .modal-search {
         overflow-y: inherit!important;
         background-color: transparent!important;
         box-shadow: none!important;
+        width: 16%!important;
       }
       @media only screen and (max-width: 992px) {
-        .modal {
+        .modal-search {
           width: 22%;
         }
       }
@@ -39,8 +43,60 @@
       }
 
       hr {
-        border-bottom: 5px solid #c0c0c0;
-        margin: 0 30px 0 20px!important;
+        border-style: none;
+        border-width: 0;
+        margin: 33px auto 63px;
+        background-color: #bbb;
+        width: 100px;
+        height: 5px;
+      }
+
+      .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+        color: #26a179;
+        margin-right: 20px;
+        transition: color .3s ease;
+        text-transform: uppercase;
+      }
+      .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+        color: #7bffc4;
+      }
+
+      .rock-salt {
+        font-family: 'Rock Salt', cursive;
+      }
+      .nav-logo {
+        font-size: x-large;
+        color: #efefef;
+      }
+
+      nav .nav-wrapper {
+        padding: 0 10px;
+      }
+      .welcome-logo {
+        font-size: xx-large;
+        color: #1e7658;
+      }
+
+      footer {
+        height: 80px;
+      }
+
+      /* Color change for balance and my ride card */
+      a.dup-card {
+        color: #0f8884!important;
+      }
+
+      .card-hvr {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+
+      }
+      .card-hvr:hover {
+        background-color: #f2f2f2;
+        color: #0a5423;
       }
     </style>
     
@@ -59,6 +115,12 @@
           // Hide sideNav
           $('.button-collapse').sideNav('hide');
       });
+      // Initialize tooltip
+      $('.tooltipped').tooltip({delay: 50});
+      // Initialize scrollspy
+      $('.scrollspy').scrollSpy();
+
+
   </script>
   </body>
 </html>
