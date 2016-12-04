@@ -3,15 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
-
     <title>goRIPTA_lite</title>
     <meta name="description" content="goRIPTA_lite description">
 
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
-
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="import" href="/src/ride-app/ride-app.html">
     <!--<script>
         window.addEventListener('load', function() {
@@ -19,16 +17,54 @@
                 .then(function() { console.log('Service Worker Registered'); });
         });
     </script>-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
     <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #f1f1f1;
-    }
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f1f1f1;
+      }
+      i.left {
+        margin-right: 10px!important;
+      }
+      .modal {
+        overflow-y: inherit!important;
+        background-color: transparent!important;
+        box-shadow: none!important;
+      }
+      @media only screen and (max-width: 992px) {
+        .modal {
+          width: 22%;
+        }
+      }
+      .userView a img {
+        height: 100px!important;
+      }
+
+      hr {
+        border-bottom: 5px solid #c0c0c0;
+        margin: 0 30px 0 20px!important;
+      }
     </style>
 
   </head>
   <body>
     <ride-app></ride-app>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script type="text/javascript">
+      // Intializes side-navigation slide-out
+      $(".button-collapse").sideNav();
+      // Modal Initialization
+      $('.modal').modal();
+      $('.sidenav-click').on('click', function () {
+          // Hide sideNav
+          $('.button-collapse').sideNav('hide');
+      });
+  </script>
   </body>
 </html>
