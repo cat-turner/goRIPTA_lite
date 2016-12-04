@@ -1,195 +1,322 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
-
-<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
-<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
-<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
-
-<link rel="import" href="../../bower_components/app-layout/demo/sample-content.html">
-
-<link rel="import" href="../../bower_components/app-layout/app-layout.html">
-
-  <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
-  <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-<link rel="import" href="../../bower_components/paper-item/paper-item.html">
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-<script src="/src/ride-app/script/parse.js" async></script>
-<script src="/src/ride-app/script/activebuses.js" async></script>
-
 <dom-module id="ride-app">
-  <template>
-    <header>
-      <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper teal">
-          <a href="#!" class="brand-logo">goRIPTA_lite</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#myRides"><i class="material-icons left">directions_bus</i>My Rides</a></li>
-            <li><a href="#"><i class="material-icons left">attach_money</i>My Balance</a></li>
-            <li><a href="#!"><i class="material-icons">refresh</i></a></li>
-            <li><a href="#busSearch"><i class="material-icons left">search</i>Search</a></li>
-          </ul>
-        </div>
-      </nav>
-        </div>
-      <ul class="side-nav" id="mobile-demo">
-        <li><div class="userView">
-          <a href="#!user"><img src="images/ripta.png"></a>
-          <a href="#!phone"><span class="grey-text name">401.781.9400</span></a>
-          <a href="#!email"><span class="grey-text email">help@ripta.com</span></a>
-        </div></li>
-        <li><a href="#myRides"><i class="material-icons left">directions_bus</i>My Rides</a></li>
-        <li><a href="#!"><i class="material-icons left">attach_money</i>My Balance</a></li>
-        <li><a href="#!"><i class="material-icons left">refresh</i>Refresh Cards</a></li>
-        <li><a href="#busSearch" class="sidenav-click"><i class="material-icons left">search</i>Search</a></li>
-      </ul>
-    </header>
-
-    <!-- Search Modal Structure -->
-    <div id="busSearch" class="modal">
-      <div class="modal-content">
-        <p class="center-align">
-          <!-- Bus Drop Down -->
-          <!-- Dropdown Trigger -->
-          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Routes</a>
-
-          <!-- Dropdown Structure -->
-          <ul id='dropdown1' class='dropdown-content'>
-            <li><a href="#!">1</a></li>
-            <li><a href="#!">2</a></li>
-            <li><a href="#!">3</a></li>
-          </ul>
-
-        </p>
-      </div>
-    </div>
-    <main>
-
-      <div class="center-align">
-        <section>
-          <div class = "row">
-            <div class="col s12 m10 offset-m1 l8 offset-l2">
-              <div class="card horizontal">
-              <div class="card-stacked">
-                <div class="card-content">
-
-                  <form class="contact" method="post">
-                    <div class="row center-align">
-                    <div class="input-field col s10">
-                      <h3>Where do you want to go?</h3>
-                      <div id="locationField">
-                        <input id="autocomplete" placeholder="Enter a starting point"
-                          onFocus="geolocate()" type="text" name="start_point"></input>
-                      </div>
+    <template>
+        <header id="topScroll" class="scrollspy">
+            <nav>
+                <div class="nav-wrapper teal">
+                    <a href="#!" class="brand-logo"><span class="rock-salt nav-logo">go</span>RIPTA<span
+                            class="rock-salt nav-logo">_lite</span></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#myRides"><i class="material-icons left">directions_bus</i>My Rides</a></li>
+                        <li><a href="#myBalance"><i class="material-icons left">attach_money</i>My Balance</a></li>
+                        <li><a href="#!"><i class="material-icons">refresh</i></a></li>
+                        <li><a href="#busSearch"><i class="material-icons left">search</i>Search</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <div class="userView">
+                        <a href="#!user"><img src="images/ripta.png"></a>
+                        <a href="#!phone"><span class="grey-text name">401.781.9400</span></a>
+                        <a href="#!email"><span class="grey-text email">help@ripta.com</span></a>
                     </div>
-                  </div>
-                  <div class="row center align">
-                    <div class="input-field col s10">
-                      <div id="locationField">
-                        
-                        <input id="autocomplete" placeholder="Enter an ending point"
-                          onFocus="geolocate()" type="text" name="end_point"></input>
-                      </div>
-                  </div>
+                </li>
+                <li><a href="#myRides" class="sidenav-click"><i class="material-icons left">directions_bus</i>My Rides</a></li>
+                <li><a href="#myBalance" class="sidenav-click"><i class="material-icons left">attach_money</i>My Balance</a></li>
+                <li><a href="#!" ><i class="material-icons left">refresh</i>Refresh Cards</a></li>
+                <li><a href="#busSearch" class="sidenav-click"><i class="material-icons left">search</i>Search</a></li>
+            </ul>
+        </header>
 
-                </div>
-                <div class="card-action">
+        <!-- Search Modal Structure -->
+        <div id="busSearch" class="modal modal-search">
+            <div class="modal-content">
+                <p class="center-align">
+                    <!-- Bus Drop Down -->
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button waves-effect waves-light btn btn-large' href='#'
+                       data-activates='dropdown1'>Routes</a>
 
-                    <button type="submit" class="btn btn-success" type="submit" id="submit">
-                    <span>Get Directions</span>
-                    </div>
-                </div>
-              </form>
-              
-              
-              
-              </div>
-            </div>  
-          </div>
-          
-          
-          
-          
-        </section>
-        
-        
-        <hr>
-        
-        <h3>My Rides</h3>
-        
-      </div>
+                    <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">1</a></li>
+                    <li><a href="#!">2</a></li>
+                    <li><a href="#!">3</a></li>
+                </ul>
 
-      <section>
-        <div class="row">
-          <div class="col s12 m10 offset-m1 l8 offset-l2">
-            <div class="card horizontal">
-              <div class="card-image">
-                <!--<img src="https://www.iconexperience.com/_img/v_collection_png/512x512/shadow/bus.png">-->
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <p><h2>Providence/Newport</h2></p>
-                  <p><h2>Bus Route: 60</h2></p>
-                  <p><h2>On-Time</h2></p>
-                </div>
-                <div class="card-action">
-                  <a href="#">Where is my bus?</a>
-                </div>
-              </div>
+                </p>
             </div>
-          </div>
-
         </div>
-        
-          <div class="row">
-          <div class="col s12 m10 offset-m1 l8 offset-l2">
-            <div class="card horizontal">
+        <!-- Begin Main -->
+        <main>
+            <!-- Welcome Card -->
+            <section>
+                <div class="row">
+                    <div class="col m10 offset-m1">
+                        <div class="card z-depth-2">
+                            <div class="card-content center-align">
+                                <h1>Welcome Riders! to <span class="welcome-logo rock-salt">go</span>RIPTA<span
+                                        class="welcome-logo rock-salt">_lite</span></h1>
+                                <h6>This app is designed to help you with all your RIPTA&copy; needs</h6>
+                            </div>
+                            <div class="card-action center-align">
+                                <a href="#myRides" class="tooltipped" data-position="bottom"
+                                   data-delay="50" data-tooltip="My Rides"><i class="material-icons">directions_bus</i></a>
+                                <a href="#myBalance" class="tooltipped" data-position="bottom"
+                                   data-delay="50" data-tooltip="My Balance"><i class="material-icons">attach_money</i></a>
+                                <a href="#!" class="tooltipped" data-position="bottom"
+                                   data-delay="50" data-tooltip="Refresh Cards"><i class="material-icons">refresh</i></a>
+                                <a href="#busSearch" class="tooltipped" data-position="bottom"
+                                   data-delay="50" data-tooltip="Search"><i class="material-icons">search</i></a>
+                            </div>
+                        </div>
+                    </div>
 
-              </div>
-              </div>
-              </div>
-              
-              <paper-dropdown-menu label="Time" on-paper-dropdown-close="itemSelected">
-  <paper-listbox class="dropdown-content" selected="0">
-    <paper-item>Select One</paper-item>
-    <paper-item>Select two</paper-item>
-    <paper-item>Select Three</paper-item>
-  </paper-listbox>
-</paper-dropdown-menu>
-      </section>
-    </main>
-    <footer></footer>
-  </template>
+                </div>
+            </section>
+            <!-- END Welcome Card -->
 
-  <script>
+            <!-- Bus Route Title -->
+            <div class="center-align title">
+                <h3>Bus Routes</h3>
+                <hr>
+            </div>
 
-  //properties: here you can store variables
-  
-    Polymer({
+            <!-- Card Section -->
+            <section>
+                <!--<div class="row">-->
+                    <!--<div class="col s12 m6">-->
+                        <!--<div class="card z-depth-2">-->
+                            <!--<div class="card-content">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col m4"></div>-->
+                                    <!--<div class="col m6"></div>-->
+                                    <!--<div class="col m4"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="card-action center-align">-->
+                                <!--<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>-->
+                                <!--<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>-->
 
-      is: 'ride-app',
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-      properties: {
-        prop1: {
-          type: String,
-          value: 'ride-app',
-        },
-      },
-    });
+                <div class="row">
+                    <div class="col s12 m10 offset-m1 l8 offset-l2">
+                        <div class="card z-depth-2">
+                            <div class="card-content">
+                                <div class="row center-align">
+                                    <div class="col s4 cyan darken-4 white-text"><h1>60</h1></div>
+                                    <div class="col s8">
+                                        <h1>Stop ID: 22552</h1>
+                                        
+                                        
+                                    </div>
+                                    <div class="col s12">
+                                        <h2>ETA: 7:00PM (ON TIME)</h2>
+                                    </div>
+                                    <div class="col s12">
+                                        <h2>ETD: 7:15PM (ON TIME)</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Bus cards will go here -->
+                <div id="new-card"></div>
+
+            </section>
+
+
+            <!-- Bus Route Title -->
+            <div class="center-align title">
+                <h3>Rider Details</h3>
+                <hr>
+            </div>
+
+            <div class="row">
+
+                <!-- My Rides Card -->
+                <a class="modal-trigger dup-card" href="#ridesModal">
+                    <div class="col s12 m6">
+                        <div class="card card-hvr z-depth-2 scrollspy" id="myRides">
+                            <div class="card-content">
+                                <div class="center-align">
+                                    <i class="material-icons large">list</i>
+                                </div>
+                                <div class="card-title center-align">
+                                    My Rides
+                                </div>
+                            </div>
+                            <div class="card-action center-align"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- My Rides Modal Structure -->
+                <div id="ridesModal" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4 class="center-align">RIPTA Favorites Station</h4>
+                        <div class="center-align">
+                            <img src="images/person-flat.png" class="responsive-img">
+                            <h3>Welcome, Chris!</h3>
+
+                        </div>
+
+
+                        <table class="centered">
+                            <thead>
+                            <tr>
+                                <th data-field="id">Bus ID</th>
+                                <th data-field="name"># of Rides</th>
+                                <th data-field="price">Last used</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>60 - Newport/Prov</td>
+                                <td>230</td>
+                                <td>12/03/2016</td>
+                            </tr>
+                            <tr>
+                                <td>99 - Pawtucket/Prov</td>
+                                <td>120</td>
+                                <td>12/02/2016</td>
+                            </tr>
+                            <tr>
+                                <td>1 - Eddy/Hope/Benefit</td>
+                                <td>67</td>
+                                <td>12/03/2016</td>
+                            </tr>
+                            <tr>
+                                <td>56 - Chalkstone Ave</td>
+                                <td>56</td>
+                                <td>11/29/2016</td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="waves-effect waves-green btn">Add Bus Route</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Exit</a>
+                    </div>
+                </div>
+
+                <!-- My Balance Card -->
+                <a class="modal-trigger dup-card" href="#balanceModal">
+                    <div class="col s12 m6 scrollspy" id="myBalance">
+                        <div class="card card-hvr z-depth-2">
+                            <div class="card-content">
+                                <div class="center-align">
+                                    <i class="material-icons large">account_balance_wallet</i>
+                                </div>
+                                <div class="card-title center-align">
+                                    My Balance
+                                </div>
+                            </div>
+                            <div class="card-action center-align"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Balance Modal Structure -->
+                <div id="balanceModal" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4 class="center-align">RIPTA Balance Station</h4>
+                        <div class="center-align">
+                            <img src="images/person-flat.png" class="responsive-img">
+                            <h3>Welcome, Chris!</h3>
+
+                        </div>
+
+
+                        <table class="centered">
+                            <thead>
+                            <tr>
+                                <th data-field="id">Name</th>
+                                <th data-field="name">Rides Left</th>
+                                <th data-field="price">Wallet Amount</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Chris W.</td>
+                                <td>46</td>
+                                <td>$21.00</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="waves-effect waves-green btn">Add Funds</a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Exit</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </main>
+        <!-- End Main Section -->
+
+
+        <!-- Begin Footer-->
+        <footer>
+            <div class="fixed-action-btn toolbar">
+                <a class="btn-floating btn-large teal lighten-3">
+                    <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                    <li class="waves-effect waves-light"><a href="#" class="tooltipped" data-position="top"
+                                                            data-delay="50" data-tooltip="Facebook"><i
+                            class="fa fa-facebook fa-2x"
+                            aria-hidden="true"></i></a>
+                    </li>
+                    <li class="waves-effect waves-light"><a href="#" class="tooltipped" data-position="top"
+                                                            data-delay="50" data-tooltip="@goRiptaLite"><i
+                            class="fa fa-twitter fa-2x"
+                            aria-hidden="true"></i></a>
+                    </li>
+                    <li class="waves-effect waves-light"><a href="#" class="tooltipped" data-position="top"
+                                                            data-delay="50" data-tooltip="Google+"><i
+                            class="fa fa-google-plus fa-2x"
+                            aria-hidden="true"></i></a></li>
+                    <li class="waves-effect waves-light"><a href="#topScroll" class="tooltipped" data-position="top"
+                                                            data-delay="50" data-tooltip="Back to top"><i
+                            class="material-icons">arrow_upward</i></a></li>
+                </ul>
+            </div>
+
+        </footer>
+    </template>
+
+    <script>
+        //properties: here you can store variables
+
+        Polymer({
+
+            is: 'ride-app',
+            properties: {
+                prop1: {
+                    type: String,
+                    value: 'ride-app',
+                },
+            },
+        });
   </script>
   <script src="script/app.js" async></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeuIVq80qdNh3nCfZl2lE05w-8qQMw3XA&libraries=places&callback=initAutocomplete"
-    async defer></script>
-  <script src="script/autocomplete.js" async></script>
-  <script src="script/sendlocs.js" async></script>
+
+
 </dom-module>
