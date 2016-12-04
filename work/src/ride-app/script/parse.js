@@ -24,7 +24,7 @@
     'use strict';
     
      
-     var routeIDNUM_FETCH = 21;
+     var routeIDNUM_FETCH = 60;
 
      var url = "https://riptapi.herokuapp.com/api/tripupdates/route/" + routeIDNUM_FETCH;
      
