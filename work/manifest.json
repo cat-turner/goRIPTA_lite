@@ -26,6 +26,7 @@
   ],
   "description": "user interface to see bus rides",
   "background_color": "#FAFAFA",
+  "theme_color": "#6F9CF8",
   "display": "standalone",
   "orientation": "portrait"
 }
