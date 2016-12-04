@@ -22,7 +22,8 @@ var filesToCache = [
     '/',
     '/src/ride-app/ride-app.html',
     '/src/ride-app/script/parse.js',
-    '/src/ride-app/script/app.js'
+    '/src/ride-app/script/app.js',
+    '/src/images/ripta.png'
 ];
 
 /*install the event listener and cache the app shell*/
