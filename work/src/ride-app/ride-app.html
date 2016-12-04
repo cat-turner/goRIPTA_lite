@@ -1,34 +1,34 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<!--
-<link rel="import" href="bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 
-<link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-<link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
-<link rel="import" href="bower_components/app-layout/app-header/app-header.html">
-<link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 
-<link rel="import" href="bower_components/app-layout/demo/sample-content.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
 
-<link rel="import" href="/bower_components/app-layout/app-layout.html">
--->
+<link rel="import" href="../../bower_components/app-layout/demo/sample-content.html">
+
+<link rel="import" href="../../bower_components/app-layout/app-layout.html">
+
+  <link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+  <link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 <script src="/src/ride-app/script/parse.js" async></script>
 <script src="/src/ride-app/script/activebuses.js" async></script>
 
-<!--<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js');
-        });
-    }
-
-</script>-->
 <dom-module id="ride-app">
   <template>
     <header>
+      <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper teal">
           <a href="#!" class="brand-logo">goRIPTA_lite</a>
@@ -41,6 +41,7 @@
           </ul>
         </div>
       </nav>
+        </div>
       <ul class="side-nav" id="mobile-demo">
         <li><div class="userView">
           <a href="#!user"><img src="images/ripta.png"></a>
@@ -75,8 +76,57 @@
     <main>
 
       <div class="center-align">
-        <h3>Bus Routes</h3>
+        <section>
+          <div class = "row">
+            <div class="col s12 m10 offset-m1 l8 offset-l2">
+              <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">
+
+                  <form class="contact" method="post">
+                    <div class="row center-align">
+                    <div class="input-field col s10">
+                      <h3>Where do you want to go?</h3>
+                      <div id="locationField">
+                        <input id="autocomplete" placeholder="Enter a starting point"
+                          onFocus="geolocate()" type="text" name="start_point"></input>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row center align">
+                    <div class="input-field col s10">
+                      <div id="locationField">
+                        
+                        <input id="autocomplete" placeholder="Enter an ending point"
+                          onFocus="geolocate()" type="text" name="end_point"></input>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="card-action">
+
+                    <button type="submit" class="btn btn-success" type="submit" id="submit">
+                    <span>Get Directions</span>
+                    </div>
+                </div>
+              </form>
+              
+              
+              
+              </div>
+            </div>  
+          </div>
+          
+          
+          
+          
+        </section>
+        
+        
         <hr>
+        
+        <h3>My Rides</h3>
+        
       </div>
 
       <section>
@@ -84,7 +134,7 @@
           <div class="col s12 m10 offset-m1 l8 offset-l2">
             <div class="card horizontal">
               <div class="card-image">
-                <img src="https://www.iconexperience.com/_img/v_collection_png/512x512/shadow/bus.png">
+                <!--<img src="https://www.iconexperience.com/_img/v_collection_png/512x512/shadow/bus.png">-->
               </div>
               <div class="card-stacked">
                 <div class="card-content">
@@ -93,13 +143,29 @@
                   <p><h2>On-Time</h2></p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a href="#">Where is my bus?</a>
                 </div>
               </div>
             </div>
           </div>
 
         </div>
+        
+          <div class="row">
+          <div class="col s12 m10 offset-m1 l8 offset-l2">
+            <div class="card horizontal">
+
+              </div>
+              </div>
+              </div>
+              
+              <paper-dropdown-menu label="Time" on-paper-dropdown-close="itemSelected">
+  <paper-listbox class="dropdown-content" selected="0">
+    <paper-item>Select One</paper-item>
+    <paper-item>Select two</paper-item>
+    <paper-item>Select Three</paper-item>
+  </paper-listbox>
+</paper-dropdown-menu>
       </section>
     </main>
     <footer></footer>
@@ -122,4 +188,8 @@
     });
   </script>
   <script src="script/app.js" async></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeuIVq80qdNh3nCfZl2lE05w-8qQMw3XA&libraries=places&callback=initAutocomplete"
+    async defer></script>
+  <script src="script/autocomplete.js" async></script>
+  <script src="script/sendlocs.js" async></script>
 </dom-module>
