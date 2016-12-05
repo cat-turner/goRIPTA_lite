@@ -102,8 +102,9 @@ This is an open source project. This repo was started by Cat Turner.
 
 All star contributors:
 
-Ian Arsenault - Material Light UI Master
-Jay Arsenault - Service Worker Wisperer
+* Ian Arsenault - Material Light UI Master
+* Jay Arsenault - Service Worker Wisperer
+* Cat Turner - Data Thug
 
 
 ## License
