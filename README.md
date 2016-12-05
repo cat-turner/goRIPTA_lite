@@ -104,7 +104,7 @@ All star contributors:
 
 * Ian Arsenault - Material Light UI Master
 * Jay Arsenault - Service Worker Wisperer
-* Cat Turner - Data Thug
+* Cat Turner - API & Data Thug
 
 
 ## License
