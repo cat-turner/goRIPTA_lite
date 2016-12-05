@@ -23,7 +23,7 @@ Core Objectives:
 Phase I
   1. Search and select routes in 3 or less steps
   2. Keep a tab on your most commonly used routes (myroutes) > tells you the latest ETA
-  3. ETA of buses presented in a way that is easy to understand and see (for all ages and languages)
+  3. ~~ETA of buses presented in a way that is easy to understand and see (for all ages and languages)~~ done
 Features (2-3):
 TBD on Friday
 
@@ -61,13 +61,15 @@ PWApps through chrome have built-in functionality that can used to meet project 
 
 ## Run the demo
 
-1. Cd to /work directory of goRIPTA_lite
+1. cd to /work directory of goRIPTA_lite
+  
+  
 2. Run polymer serve from the repo directory:
     ```
     polymer serve
     ```
 
-3. Open localhost:8080/components/icon-toggle/demo/ in your browser.
+3. Open localhost:8080 in your browser.
 
     Cloud 9 users:
     ```
@@ -86,10 +88,6 @@ PWApps through chrome have built-in functionality that can used to meet project 
     Note that underscore in container names is replaced by dash
     ```
 
-(Note that the path uses icon-toggle—the component name listed in this element's bower.json file—rather than the actual directory name. If you're wondering why polymer serve does this, see HTML imports and dependency management.)
-You'll see some cards, with the first one being hello Cat. If you don't know where to start, try changing "hello Cat" to "hello mr/ms cool". Just do it mayne.
-
-
 ## API Reference
 
 TODO: Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
@@ -101,6 +99,12 @@ TODO: Describe and show how to run the tests with code examples.
 ## Contributors
 
 This is an open source project. This repo was started by Cat Turner.
+
+All star contributors:
+
+Ian Arsenault - Material Light UI Master
+Jay Arsenault - Service Worker Wisperer
+
 
 ## License
 See the [LICENSE](https://github.com/cat-turner/goRIPTA_lite/blob/master/LICENSE) file for license rights and limitations (Apache-2.0)
