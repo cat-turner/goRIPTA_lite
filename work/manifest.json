@@ -22,10 +22,11 @@
       "src": "/ride-app/images/ripta512.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
+    }
   ],
   "description": "user interface to see bus rides",
   "background_color": "#FAFAFA",
+  "theme_color": "#6F9CF8",
   "display": "standalone",
   "orientation": "portrait"
 }
