@@ -1,5 +1,5 @@
 # goRIPTA_lite
-A PWA prototype to make it easier to pick bus routes and pay for them
+A PWA prototype to make it easier to pick bus routes and pay for them.
 
 ## Synopsis
 Progressive Web Apps (PWS) provide the same user experience regardless of the platform.
